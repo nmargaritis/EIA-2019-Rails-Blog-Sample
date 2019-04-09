@@ -1,0 +1,40 @@
+<% if logged_in? %>
+<div class="container rel">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 style="color:gray">Welcome
+
+                <%= "#{current_user.first_name}  #{current_user.last_name}" %>
+            </h3>
+        </div>
+    </div>
+
+    <% unless alert.nil? %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+    <% end %>
+
+    <%= link_to articles_path do %>
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-xs-12">
+                <span>View Articles</span>
+            </div>
+        </div>
+    </div>
+    <% end %>
+
+    <%= link_to 'articles/new' do %>
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-xs-12">
+                <span>Create Article</span>
+            </div>
+        </div>
+    </div>
+    <% end %>
+
+    <%= link_to 'Logout', logout_path, method: "delete" %>
+</div>
+<% end %>

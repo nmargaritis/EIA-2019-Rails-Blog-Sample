@@ -1,0 +1,17 @@
+<table class="table table-hover">
+<tr>
+  <th>Id</th>
+  <th>Title</th>
+  <th>Text</th>
+</tr>
+
+
+<% @articles.each do |article| %>
+<tr>
+  <td><%= article.id %><td>
+  <td><%= article.title %><td>
+  <td><%=  truncate(article.text, :length => 50)  %><td>
+</tr>
+<% end %>
+
+</table>
